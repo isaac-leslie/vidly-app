@@ -18,7 +18,7 @@ mongoose.connect('mongodb://localhost/vidly-app')
 app.use(express.json());
 
 app.use('/api/genres', genres);
-app.use('/api/customers', customers)
+app.use('/api/customers', customers);
 
 // Take environmental variable for port or a default
 // Have the web server listen on that port

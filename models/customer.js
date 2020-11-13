@@ -8,7 +8,7 @@ const customerSchema = mongoose.Schema({
     isGold: Boolean
 });
 
-const Customer = mongoose.model('customer', customerSchema);
+const Customer = mongoose.model('Customer', customerSchema);
 
 function validateCustomer(reqBody) {
     const schema = Joi.object({
@@ -22,3 +22,4 @@ function validateCustomer(reqBody) {
 
 exports.Customer = Customer;
 exports.validate = validateCustomer;
+exports.customerSchema = customerSchema;

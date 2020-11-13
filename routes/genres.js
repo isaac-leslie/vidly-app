@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 const { Genre, validate } = require('../models/genre');
 
 
-
 // Read and list all genres
 router.get('/', async (req, res) => {
     try {
@@ -27,8 +26,7 @@ router.post('/', async (req, res) => {
     
     try {
         // Create genre object, set parameters, add to database
-        let genre = new Genre({ name: req.body.name });
-        genre = await genre.save();
+        const genre = new Genre({ name: req.body.name });
 
         // Return to client
         res.send(genre);

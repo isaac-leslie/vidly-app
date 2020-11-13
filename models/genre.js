@@ -10,7 +10,7 @@ const genreSchema = mongoose.Schema({
     }
 });
 
-const Genre = mongoose.model('genre', genreSchema);
+const Genre = mongoose.model('Genre', genreSchema);
 
 function validateGenre(reqBody) {
     const schema = Joi.object({
@@ -23,3 +23,4 @@ function validateGenre(reqBody) {
 
 exports.validate = validateGenre;
 exports.Genre = Genre;
+exports.genreSchema = genreSchema;

@@ -7,19 +7,17 @@ const mongoose = require('mongoose');
 const {User} = require('../models/user');
 const router = express.Router();
 
-
+// Authenticate a user
 router.post('/', async (req, res) => {
     const {error} = validate(req.body);
     if (error) return res.status(400).send(result.error.message);
 
     let user = await User.findOne({ email: req.body.email });
-    if (!user) return res.status(400).send('Invalid email or password');
-
-    
+    if (!user) return res.status(400).send('Invalid Email or password');
 
     try {
         const validPassword = await bcrypt.compare(req.body.password, user.password);
-        if (!validPassword) return res.status(400).send('Invalid email or password');
+        if (!validPassword) return res.status(400).send('Invalid email or Password');
 
         // this defines the payload of the web token
         const token = user.generateAuthToken();

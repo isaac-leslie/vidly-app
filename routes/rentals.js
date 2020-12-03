@@ -8,7 +8,7 @@ const router = express.Router();
 
 Fawn.init(mongoose);
 
-// Create a movie
+// Create a rental
 router.post('/', async (req, res) => {
     // Validate
     const { error } = validate(req.body);

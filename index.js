@@ -13,7 +13,7 @@ require('./startup/database')();
 require('./startup/config')();
 require('./startup/validation')();
 
-throw new Error('startup failure?!?!');
+// throw new Error('startup failure?!?!');
 
 // Take environmental variable for port or a default
     // Have the web server listen on that port
